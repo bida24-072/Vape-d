@@ -229,7 +229,7 @@ function checkoutCart() {
     const items = cart.map(i => `• ${i.quantity}× ${i.name} (${i.brand}) — P${(i.price * i.quantity).toFixed(2)}`).join('\n');
     const total = `P${getCartTotal().toFixed(2)}`;
     const message = `Hi VAPE'D! 🛒\n\nI'd like to order:\n\n${items}\n\nTotal: ${total}\n\nPlease confirm stock and delivery.`;
-    const phone = '26771234567';
+    const phone = '26775782249';
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
 }
 
