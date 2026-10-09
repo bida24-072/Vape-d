@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | VAPE'D</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="age-gate" id="age-gate">
+        <div class="age-gate-inner">
+            <div class="age-gate-logo">VAPE'D</div>
+            <div class="age-gate-tag">PREMIUM VAPE · GABORONE</div>
+            <h2>Are you 18 or older?</h2>
+            <div class="age-gate-buttons">
+                <button class="btn" onclick="confirmAge()"><i class="fas fa-check"></i> Yes</button>
+                <button class="btn btn-outline" onclick="denyAge()"><i class="fas fa-times"></i> No</button>
+            </div>
+            <div class="age-gate-warning"><i class="fas fa-exclamation-triangle"></i> Not for sale to minors · Nicotine is addictive</div>
+        </div>
+    </div>
+
+    <div class="top-bar"><i class="fas fa-bolt"></i> Free delivery in Gaborone on orders over P500 · Same-day dispatch before 3PM</div>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-mark">V</div>
+                <div>
+                    <div class="logo-text">VAPE'D</div>
+                    <span class="logo-sub">PREMIUM · GABORONE</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="shop.html" class="active">Shop <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown">
+                            <a href="shop.html"><i class="fas fa-wind"></i> Disposables</a>
+                            <a href="shop.html"><i class="fas fa-battery-full"></i> Pod Systems</a>
+                            <a href="shop.html"><i class="fas fa-cube"></i> Mods</a>
+                            <a href="shop.html"><i class="fas fa-flask"></i> E-Liquids</a>
+                            <a href="shop.html"><i class="fas fa-tint"></i> Nic Salts</a>
+                            <a href="shop.html"><i class="fas fa-cog"></i> Coils & Pods</a>
+                            <a href="shop.html"><i class="fas fa-box"></i> Tanks</a>
+                            <a href="shop.html"><i class="fas fa-toolbox"></i> Accessories</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="shop.html">Brands <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown">
+                            <a href="shop.html">Elf Bar</a>
+                            <a href="shop.html">Lost Mary</a>
+                            <a href="shop.html">Vaporesso</a>
+                            <a href="shop.html">Uwell</a>
+                            <a href="shop.html">GeekVape</a>
+                            <a href="shop.html">Nasty Juice</a>
+                            <a href="shop.html">Dinner Lady</a>
+                        </div>
+                    </li>
+                    <li><a href="shop.html">Wholesale</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons">
+                <button class="nav-icon-btn"><i class="fas fa-search"></i></button>
+                <button class="nav-icon-btn" onclick="toggleCart()">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <button class="
