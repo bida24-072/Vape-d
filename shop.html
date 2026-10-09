@@ -72,4 +72,120 @@
                     <i class="fas fa-shopping-bag"></i>
                     <span class="cart-count" id="cart-count">0</span>
                 </button>
-                <button class="
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+    <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>The <em>Shop</em></h1>
+            <p>Every product verified authentic. Every order shipped from Gaborone.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a><span class="sep">/</span><span>Shop</span>
+        </div>
+
+        <button class="mobile-filter-toggle" onclick="toggleMobileFilters()"><i class="fas fa-sliders-h"></i> Filters</button>
+
+        <div class="shop-layout">
+            <aside class="filters-sidebar">
+                <div class="filter-group">
+                    <div class="filter-group-title">Category</div>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('categories', 'disposables', this.checked)"> Disposables <span class="count" data-count-category="disposables">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('categories', 'pods', this.checked)"> Pod Systems <span class="count" data-count-category="pods">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('categories', 'mods', this.checked)"> Mods <span class="count" data-count-category="mods">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('categories', 'liquids', this.checked)"> E-Liquids <span class="count" data-count-category="liquids">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('categories', 'salts', this.checked)"> Nic Salts <span class="count" data-count-category="salts">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('categories', 'coils', this.checked)"> Coils & Pods <span class="count" data-count-category="coils">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('categories', 'tanks', this.checked)"> Tanks <span class="count" data-count-category="tanks">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('categories', 'mtl', this.checked)"> MTL <span class="count" data-count-category="mtl">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('categories', 'accessories', this.checked)"> Accessories <span class="count" data-count-category="accessories">0</span></label>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-group-title">Brand</div>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('brands', 'Elf Bar', this.checked)"> Elf Bar <span class="count" data-count-brand="Elf Bar">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('brands', 'Lost Mary', this.checked)"> Lost Mary <span class="count" data-count-brand="Lost Mary">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('brands', 'Vaporesso', this.checked)"> Vaporesso <span class="count" data-count-brand="Vaporesso">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('brands', 'Uwell', this.checked)"> Uwell <span class="count" data-count-brand="Uwell">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('brands', 'GeekVape', this.checked)"> GeekVape <span class="count" data-count-brand="GeekVape">0</span></label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('brands', 'Nasty Juice', this.checked)"> Nasty Juice <span class="count" data-count-brand="Nasty Juice">0</span></label>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-group-title">Nicotine Strength</div>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('nicotine', '0mg', this.checked)"> 0mg</label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('nicotine', '3mg', this.checked)"> 3mg</label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('nicotine', '20mg', this.checked)"> 20mg</label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('nicotine', '30mg', this.checked)"> 30mg</label>
+                    <label class="filter-option"><input type="checkbox" onchange="toggleFilterCheckbox('nicotine', '50mg', this.checked)"> 50mg</label>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-group-title">Price Range (Pula)</div>
+                    <div class="price-range-inputs">
+                        <input type="number" id="min-price" placeholder="Min" oninput="applyPriceFilter()">
+                        <span>—</span>
+                        <input type="number" id="max-price" placeholder="Max" oninput="applyPriceFilter()">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <div class="filter-group-title">Availability</div>
+                    <label class="filter-option"><input type="checkbox" onchange="activeFilters.inStock = this.checked; applyFilters();"> In stock only</label>
+                </div>
+                <button class="clear-filters" onclick="clearFilters()"><i class="fas fa-times"></i> Clear All Filters</button>
+            </aside>
+
+            <div>
+                <div class="shop-toolbar">
+                    <div class="results-count">Showing <strong data-results>0</strong> results</div>
+                    <select class="sort-select" onchange="changeSort(this.value)">
+                        <option value="latest">Sort: Latest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="name">Name: A–Z</option>
+                    </select>
+                </div>
+                <div class="products-grid" id="shop-grid"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-warning"><i class="fas fa-exclamation-triangle"></i><p><strong>WARNING:</strong> Nicotine is an addictive chemical. Not for sale to persons under 18.</p></div>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>VAPE'D <span>STORE</span></h3>
+                    <small>PREMIUM VAPE · GABORONE</small>
+                    <p>Botswana's trusted source for authentic vape products.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col"><h4>Shop</h4><ul><li><a href="shop.html">All Products</a></li><li><a href="shop.html">Disposables</a></li></ul></div>
+                <div class="footer-col"><h4>Info</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="contact.html">Wholesale</a></li></ul></div>
+                <div class="footer-col"><h4>Visit</h4><ul><li>Gaborone, Botswana</li><li>+267 71 234 567</li></ul></div>
+            </div>
+            <div class="footer-bottom"><span>© 2026 VAPE'D STORE</span><span>18+ ONLY</span></div>
+        </div>
+    </footer>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+    <aside class="cart-drawer" id="cart-drawer">
+        <div class="cart-header"><h3>Your Cart</h3><button onclick="closeCart()"><i class="fas fa-times"></i></button></div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total-row"><span>Total</span><strong id="cart-total">P0.00</strong></div>
+            <button class="cart-checkout-btn" onclick="checkoutCart()"><i class="fab fa-whatsapp"></i> Order via WhatsApp</button>
+        </div>
+    </aside>
+
+    <script src="main.js"></script>
+</body>
+</html>
